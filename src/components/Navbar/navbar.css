@@ -1,0 +1,100 @@
+.site-header {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid rgba(170, 232, 240, 0.12);
+  background: rgba(6, 23, 43, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(1120px, calc(100% - 48px));
+  min-height: 76px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #f5fbff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand-mark {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(100, 231, 237, 0.52);
+  border-radius: 9px;
+  color: #7af4e8;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  box-shadow: 0 0 22px rgba(64, 220, 219, 0.2);
+}
+
+.brand-accent { color: #70e7e2; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+}
+
+.nav-links > a:not(.button) {
+  color: #a8bacb;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: color 180ms ease;
+}
+
+.nav-links > a:not(.button):hover,
+.nav-links > a:not(.button):focus-visible { color: #f5fbff; }
+
+.nav-links .button { margin-left: 5px; }
+
+.menu-toggle {
+  display: none;
+  padding: 8px;
+  border: 1px solid rgba(170, 232, 240, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: #e7fbff;
+}
+
+@media (max-width: 720px) {
+  .site-nav { width: min(100% - 32px, 1120px); min-height: 68px; }
+  .menu-toggle { display: grid; place-items: center; }
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 16px;
+    left: 16px;
+    display: none;
+    align-items: stretch;
+    gap: 4px;
+    padding: 10px;
+    border: 1px solid rgba(170, 232, 240, 0.15);
+    border-radius: 12px;
+    background: #0a223c;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  }
+  .nav-links-open { display: flex; flex-direction: column; }
+  .nav-links > a:not(.button) { padding: 12px; border-radius: 7px; }
+  .nav-links > a:not(.button):hover { background: rgba(122, 244, 232, 0.08); }
+  .nav-links .button { justify-content: center; margin: 6px 0 0; }
+}
+
+.brand-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  object-fit: cover;
+  box-shadow: 0 0 22px rgba(64, 220, 219, 0.2);
+}
